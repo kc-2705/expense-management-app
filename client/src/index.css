@@ -1,0 +1,416 @@
+.header-container {
+  background-color: #a3b0be;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand {
+  font-size: 39px;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar-custom {
+  background-color: rgb(168, 109, 144);
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.login-icon {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.username-text {
+  font-size: 29px;
+  color: #f4eaea;
+  margin-top: 19px;
+}
+
+.ant-modal {
+  border-radius: 8px;
+}
+
+.ant-input {
+  border-radius: 4px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  box-shadow: 0 0 3px gray;
+  border-radius: 15px;
+}
+
+.filter-item {
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.filter-buttons-container {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center;
+  gap: 10px; /* Space between items */
+  margin-bottom: 15px; /* Space below the container */
+}
+
+.frequency-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.frequency-button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.frequency-button.active {
+  background-color: #1890ff;
+  color: white;
+}
+
+.switch-icon {
+  border: 1px solid rgba(0,0,0,0.677);
+  border-radius: 5px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-green {
+  background-color: #28a745;
+  border: 1px solid #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-green:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.content {
+  margin: 20px;
+}
+
+.totals-records {
+  display: flex;
+  gap: 20px; /* Space between totals and records */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row; /* Ensure that totals and content are side by side */
+  gap: 20px; /* Space between different sections */
+}
+
+.totals {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 540px; 
+  max-height: 500px;
+  flex-shrink: 0; 
+}
+
+.records {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  flex: 1; /* Allow records to take the remaining space */
+}
+
+.total-income {
+  color: #28a745; /* Green color for income */
+}
+
+.total-expenses {
+  color: #dc3545; /* Red color for expenses */
+}
+
+.total-balance {
+  font-weight: bold;
+}
+
+.balance-positive {
+  color: #28a745; /* Green color for positive balance */
+}
+
+.balance-negative {
+  color: #dc3545; /* Red color for negative balance */
+}
+
+.analytics-container {
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+.card-custom {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.progress-custom {
+  margin: 10px;
+  width: 60px; /* Reduced width */
+  height: 60px; /* Reduced height */
+}
+
+.category-item {
+  margin-bottom: 10px;
+}
+
+.category-text {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.text-success {
+  color: #4caf50; /* Green color for income */
+}
+
+.text-danger {
+  color: #f44336; /* Red color for expenses */
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.filter-buttons-container {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-item {
+  margin-bottom: 10px;
+}
+
+.frequency-buttons {
+  display: flex;
+  gap: 5px; /* Reduced gap between buttons */
+}
+
+.frequency-button {
+  padding: 5px 10px; /* Smaller padding */
+  font-size: 14px; /* Smaller font size */
+}
+
+.btn-green {
+  padding: 5px 10px; /* Smaller padding */
+  font-size: 14px; /* Smaller font size */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row; /* Stack totals and content side by side */
+  gap: 20px; /* Space between totals and content */
+}
+
+.totals {
+  margin-bottom: 20px; /* Space between totals and content */
+  padding: 15px; /* Reduced padding */
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  display: flex;
+  flex-direction: column; /* Stack charts and tables vertically */
+}
+
+.charts-container {
+  padding: 15px; /* Reduced padding */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-new-button {
+  margin-left: auto; /* Push button to the right */
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icons */
+}
+
+.pie-chart {
+  position: relative;
+}
+
+/* Increase size of the totals box */
+/*.totals {
+  margin-bottom: 20px; 
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 320px; 
+  max-width: 100%;
+  min-height: 150px; 
+}*/
+
+
+.pie-chart-container {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  gap: 20px; /* Space between chart and details */
+}
+
+.pie-chart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 500px; /* Adjust width as needed */
+  height: 250px; /* Adjust height as needed */
+}
+
+.chart-details {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd; /* Border around the details */
+  padding: 10px; /* Padding inside the border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #f9f9f9; /* Background color */
+  max-width: 300px; /* Limit the maximum width */
+}
+
+.chart-detail {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd; /* Border between details */
+}
+
+.chart-detail:last-child {
+  border-bottom: none; /* Remove border for the last item */
+}
+
+.color-swatch {
+  width: 15px; /* Adjust width */
+  height: 15px; /* Adjust height */
+  border-radius: 50%;
+  margin-right: 10px; /* Space between color swatch and text */
+}
+
+.category {
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 14px; /* Adjust font size */
+}
+
+.amount, .percentage {
+  margin-left: 10px; /* Space between category and amount/percentage */
+  font-size: 14px; /* Adjust font size */
+}
+
+.charts-container {
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 850px; /* Adjust width */
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.bargraph-container {
+  height: 500px; /* Increased height */
+  width: 850px; /* Increased width */
+  margin: 0 auto;
+}
+
+
+.bar-graph-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 10px;
+}
+
+.bar-graph-controls .anticon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Header.css */
+
+.profile-pic-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.default-profile-pic {
+  font-size: 48px;
+  color: #999;
+}
+
+.edit-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.field-icon {
+  margin-right: 8px;
+}
+
+.login-profile-pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}

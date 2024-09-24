@@ -1,0 +1,57 @@
+.reset-password-page {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.ant-form-item {
+    margin-bottom: 15px;
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.link-container {
+    display: flex;
+    justify-content: space-between; /* Space links and button evenly */
+    align-items: center; /* Center vertically */
+    margin: 15px 0;
+}
+
+.link {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+    margin: 0 10px; /* Space between links */
+}
+
+.links {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.link:hover {
+    color: #0056b3;
+}

@@ -1,0 +1,115 @@
+/* Container for Login/Register Page */
+.login-page, .register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #e0c3fc, #8ec5fc); /* Softer gradient background */
+    padding: 20px;
+    margin: 0;
+}
+
+/* Form Container */
+.login-form, .register-form {
+    background-color: #fff; /* White background for the form */
+    padding: 40px 30px; /* Increased padding for a roomier feel */
+    border-radius: 12px; /* Rounded corners for the form container */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    width: 100%;
+    max-width: 500px; /* Ensure form isn't too wide */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Headings */
+.login-heading, .register-heading {
+    font-size: 30px; /* Adjusted for a cleaner look */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Input Fields */
+.login-input, .register-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Slightly rounded edges for inputs */
+    margin-bottom: 20px; /* Added more space between input fields */
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-size: 12x;
+}
+
+/* Input Focus State */
+.login-input:focus, .register-input:focus {
+    border-color: #66b3ff; /* Lighter blue border color on focus */
+    box-shadow: 0 0 8px rgba(102, 179, 255, 0.2); /* Subtle shadow effect on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #66b3ff; /* Lighter blue color */
+    color: white;
+    padding: 8px 16px; /* Reduced padding for a smaller button */
+    border: none;
+    border-radius: 6px; /* Rounded button */
+    cursor: pointer;
+    font-size: 14px; /* Smaller font size */
+    font-weight: bold;
+    align-self: flex-end; /* Align the button to the right */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button Hover */
+.btn-primary:hover {
+    background-color: #4a90e2; /* Darker blue on hover */
+    box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3); /* Shadow on hover */
+}
+
+/* Footer (Button Container) */
+.login-footer, .register-footer {
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between; /* Left-right alignment */
+    align-items: center;
+}
+
+/* Forgot Password Link */
+.forgot-password-link {
+    color: #1064b8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Forgot Password Hover */
+.forgot-password-link:hover {
+    text-decoration: underline;
+    color: #4a90e2;
+}
+
+/* Link Styles */
+.login-link, .register-link {
+    margin-top: 15px; /* Space above the link */
+    text-align: center; /* Center the text */
+}
+
+/* Link Hover */
+.login-link:hover, .register-link:hover {
+    text-decoration: underline;
+    color: #4a90e2;
+    justify-content: flex-start;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .login-form, .register-form {
+        width: 90%; /* Make form take more space on small screens */
+    }
+}
