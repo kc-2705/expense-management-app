@@ -8,6 +8,7 @@ const categories = require('./controllers/categoryController');
 const budgets = require('./controllers/budgetController');
 const recurring = require('./controllers/recurringController');
 const { summary } = require('./controllers/summaryController');
+const ai = require('./controllers/aiController');
 
 const router = express.Router();
 
@@ -57,5 +58,9 @@ router.put('/recurring/:id', recurring.update);
 router.delete('/recurring/:id', recurring.remove);
 
 router.get('/summary', summary);
+
+router.get('/ai/status', ai.status);
+router.post('/ai/categorize', ai.categorize);
+router.get('/ai/summary', ai.summary);
 
 module.exports = router;

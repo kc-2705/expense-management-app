@@ -8,6 +8,8 @@ const transactionSchema = new mongoose.Schema(
     category: { type: String, required: true, trim: true },
     description: { type: String, default: '', trim: true, maxlength: 200 },
     date: { type: Date, required: true },
+    // Marked by the user (or suggested by the AI assistant) as a possible business expense.
+    business: { type: Boolean, default: false },
     // Set when the transaction was created by a recurring rule.
     recurring: { type: mongoose.Schema.Types.ObjectId, ref: 'Recurring' },
   },

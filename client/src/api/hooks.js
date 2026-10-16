@@ -57,3 +57,14 @@ export const useDeleteRecurring = () => useMoneyMutation((id) => api.delete(`/re
 export const useSaveCategory = () =>
   useMoneyMutation(({ id, ...body }) => (id ? api.put(`/categories/${id}`, body) : api.post('/categories', body)), ['categories']);
 export const useDeleteCategory = () => useMoneyMutation((id) => api.delete(`/categories/${id}`), ['categories']);
+
+// ---- local AI assistant (Ollama) ---------------------------------------
+
+export const useAiStatus = () =>
+  useQuery({ queryKey: ['ai-status'], queryFn: () => get('/ai/status'), staleTime: 30_000, retry: false });
+
+export const useAiCategorize = () =>
+  useMutation({ mutationFn: (rows) => api.post('/ai/categorize', { rows }).then((r) => r.data.suggestions) });
+
+export const useAiSummary = () =>
+  useMutation({ mutationFn: (month) => get('/ai/summary', { month }) });

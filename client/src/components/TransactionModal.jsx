@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import { App, DatePicker, Form, Input, InputNumber, Modal, Segmented, Select, Space } from 'antd';
+import { App, Checkbox, DatePicker, Form, Input, InputNumber, Modal, Segmented, Select, Space } from 'antd';
 import { useCategories, useSaveTransaction } from '../api/hooks';
 import { errorMessage } from '../api/client';
 import { dayjs, toDayParam, toPickerDay } from '../utils/format';
@@ -34,8 +34,8 @@ function TransactionModal({ open, tx, onClose }) {
     if (!open) return;
     form.setFieldsValue(
       tx
-        ? { ...tx, date: toPickerDay(tx.date) }
-        : { type: 'expense', amount: null, category: undefined, description: '', date: dayjs() },
+        ? { ...tx, business: Boolean(tx.business), date: toPickerDay(tx.date) }
+        : { type: 'expense', amount: null, category: undefined, description: '', date: dayjs(), business: false },
     );
   }, [open, tx, form]);
 
@@ -59,7 +59,12 @@ function TransactionModal({ open, tx, onClose }) {
   async function submit() {
     const values = await form.validateFields();
     try {
-      await save.mutateAsync({ id: tx?._id, ...values, date: toDayParam(values.date) });
+      await save.mutateAsync({
+        id: tx?._id,
+        ...values,
+        business: values.type === 'expense' && Boolean(values.business),
+        date: toDayParam(values.date),
+      });
       message.success(tx ? 'Transaction updated' : 'Transaction added');
       onClose();
     } catch (e) {
@@ -105,6 +110,11 @@ function TransactionModal({ open, tx, onClose }) {
         <Form.Item name="description" label="Description">
           <Input placeholder="e.g. Costco, Rent for October" maxLength={200} />
         </Form.Item>
+        {type === 'expense' && (
+          <Form.Item name="business" valuePropName="checked" style={{ marginBottom: 0 }}>
+            <Checkbox>Possible business expense (useful at tax time)</Checkbox>
+          </Form.Item>
+        )}
         <button type="submit" hidden />
       </Form>
     </Modal>

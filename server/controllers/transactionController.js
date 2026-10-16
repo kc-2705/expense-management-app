@@ -16,6 +16,7 @@ const transactionSchema = z.object({
   category: z.string().trim().min(1, 'Choose a category.').max(30),
   description: z.string().trim().max(200).optional().default(''),
   date: day,
+  business: z.boolean().optional().default(false),
 });
 
 const listSchema = z.object({

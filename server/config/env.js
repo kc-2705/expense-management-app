@@ -17,6 +17,12 @@ module.exports = {
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || '7d',
   // Comma-separated list of front-end origins allowed to call the API.
   clientOrigins: (process.env.CLIENT_URL || 'http://localhost:5173').split(',').map((s) => s.trim()),
+  // Local AI (Ollama). Runs on the user's machine, so no data is sent to a cloud service.
+  ollama: {
+    url: (process.env.OLLAMA_URL || 'http://localhost:11434').replace(/\/$/, ''),
+    model: process.env.OLLAMA_MODEL || 'llama3.2:3b',
+    timeoutMs: Number(process.env.OLLAMA_TIMEOUT_MS) || 120000,
+  },
   smtp: process.env.SMTP_HOST
     ? {
         host: process.env.SMTP_HOST,

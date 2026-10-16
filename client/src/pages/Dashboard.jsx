@@ -7,6 +7,7 @@ import { errorMessage } from '../api/client';
 import { useAuth } from '../context/AuthContext';
 import { Amount, MonthSwitcher, PageHeader, StatCard, useCategoryLookup } from '../components/common';
 import { CategoryDonut, TrendChart } from '../components/Charts';
+import AiSummaryCard from '../components/AiSummaryCard';
 import BudgetBar from '../components/BudgetBar';
 import CategoryIcon from '../components/CategoryIcon';
 import { useOpenTransaction } from '../components/TransactionModal';
@@ -70,7 +71,9 @@ export default function Dashboard() {
             <Button type="primary" icon={<PlusOutlined />} onClick={() => openTransaction()}>Add your first transaction</Button>
           </Empty>
         </Card>
-      ) : null}
+      ) : (
+        <AiSummaryCard month={month} />
+      )}
 
       <Row gutter={[16, 16]} style={{ marginTop: 16 }}>
         <Col xs={24} xl={15}>

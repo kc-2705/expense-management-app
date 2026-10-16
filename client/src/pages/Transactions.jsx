@@ -9,6 +9,7 @@ import {
   PlusOutlined,
   RetweetOutlined,
   SearchOutlined,
+  ShoppingOutlined,
   UploadOutlined,
 } from '@ant-design/icons';
 import { fetchAllTransactions, useCategories, useDeleteTransaction, useTransactions } from '../api/hooks';
@@ -116,6 +117,11 @@ export default function Transactions() {
                 {t.recurring && (
                   <Tooltip title="Added by a recurring payment">
                     <RetweetOutlined style={{ marginLeft: 6, opacity: 0.6 }} />
+                  </Tooltip>
+                )}
+                {t.business && (
+                  <Tooltip title="Possible business expense">
+                    <ShoppingOutlined style={{ marginLeft: 6, opacity: 0.6 }} />
                   </Tooltip>
                 )}
               </strong>
