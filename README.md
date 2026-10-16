@@ -5,7 +5,8 @@
 ![Express](https://img.shields.io/badge/Express-5-000000?logo=express&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
 ![Ant Design](https://img.shields.io/badge/Ant%20Design-6-0170FE?logo=antdesign&logoColor=white)
-![Tests](https://img.shields.io/badge/API%20tests-15%20passing-brightgreen)
+![Ollama](https://img.shields.io/badge/AI-Ollama%20%2B%20Llama%203.2-000000?logo=ollama&logoColor=white)
+![Tests](https://img.shields.io/badge/tests-22%20passing-brightgreen)
 
 A personal finance tracker: record income and expenses, set monthly budgets per category, automate recurring payments, import bank statements, and see where your money goes.
 
@@ -23,10 +24,33 @@ Built with **MongoDB, Express, React and Node.js** (MERN), Ant Design and React 
 - **Categories:** 17 defaults on sign-up; add your own with a color and icon. Renaming one updates its transactions, budgets and recurring payments.
 - **Account:** sign up, log in, forgot password with a one-time emailed code, change password, currency, dark mode, delete account.
 - **Responsive:** works on phones, with a slide-out menu.
+- **Local AI assistant (optional):** auto-categorizes imported bank transactions, flags likely business expenses and writes a monthly summary using an open-source model running on your own computer. See below.
 
 | Transactions | Budgets | Mobile |
 | --- | --- | --- |
 | ![Transactions](docs/screenshots/transactions.png) | ![Budgets](docs/screenshots/budgets.png) | ![Mobile](docs/screenshots/mobile.png) |
+
+## Local AI assistant (optional)
+
+Expenso can use a **local open-source model** through [Ollama](https://ollama.com) to help freelancers with bookkeeping. The model runs on your own computer, so bank data never goes to a cloud AI service, and it costs nothing to run.
+
+- **Auto-categorize imports:** after uploading a bank CSV, click **Auto-categorize with AI**. Each transaction gets a category from your own list, and likely business costs (software, coworking, client travel, courses) are flagged so they're easy to find at tax time. You review every suggestion before importing.
+- **Business expense flag:** mark any expense as a possible business cost. A briefcase icon shows it in the list.
+- **Monthly summary:** a short plain-English recap on the dashboard. All numbers and comparisons are worked out in code first and the model only phrases them, which keeps a small model from getting the math wrong.
+
+| AI categorization | Monthly summary |
+| --- | --- |
+| ![AI categorization on import](docs/screenshots/ai-import.png) | ![AI monthly summary](docs/screenshots/ai-summary.png) |
+
+**Set up:**
+
+```bash
+# 1. Install Ollama from https://ollama.com, then download a small model (about 2 GB):
+ollama pull llama3.2:3b
+# 2. Start Expenso as usual. The AI buttons turn on automatically when Ollama is running.
+```
+
+Try it with `docs/sample/freelancer-bank-statement.csv`. In testing on that file, `llama3.2:3b` picked the right category for 15 of 15 transactions in about 16 seconds on a laptop GPU. Transactions are sent in batches of 5, which proved more accurate than sending them all at once. To use a different model, set `OLLAMA_MODEL` in `.env`.
 
 ## Security
 
@@ -42,7 +66,7 @@ Built with **MongoDB, Express, React and Node.js** (MERN), Ant Design and React 
 | --- | --- |
 | Front end | React 19, Vite, Ant Design 6, React Query, React Router, Recharts, Day.js, PapaParse, jsPDF |
 | Back end | Node.js, Express 5, Mongoose 9, Zod, bcrypt, JSON Web Tokens, Helmet, express-rate-limit, Nodemailer |
-| Tests | Node test runner, Supertest, mongodb-memory-server (15 API tests) |
+| Tests | Node test runner, Supertest, mongodb-memory-server (22 tests: API + AI assistant) |
 
 ```
 server/
@@ -57,6 +81,7 @@ client/src/
   components/          Layout, charts, transaction form, CSV import, budget bars
   api/                 Axios client and React Query hooks
 tests/api.test.js      API tests
+tests/ai.test.js       AI assistant tests (fake Ollama, no model needed)
 scripts/demo.js        Demo server with sample data
 ```
 

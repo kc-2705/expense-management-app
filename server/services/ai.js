@@ -79,6 +79,7 @@ function categorizePrompt(rows, categories) {
         '- "DELTA AIR" or "MARRIOTT" -> Travel\n' +
         '- "CVS PHARMACY" or "WALGREENS" -> Health\n' +
         '- "WEWORK" or "COWORKING" -> Rent & Housing or Other, business true\n' +
+        '- "ZELLE TO LANDLORD" or "APARTMENT RENT" -> Rent & Housing, business false (home rent is personal)\n' +
         '- "WHOLE FOODS" or "TRADER JOE\'S" -> Groceries, business false\n\n' +
         'Answer with JSON only.',
     },
