@@ -1,5 +1,6 @@
 # Expenso
 
+[![CI](https://github.com/kc-2705/expense-management-app/actions/workflows/ci.yml/badge.svg)](https://github.com/kc-2705/expense-management-app/actions/workflows/ci.yml)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-5-000000?logo=express&logoColor=white)
