@@ -45,6 +45,9 @@ export function ThemeProvider({ children }) {
             fontFamily: "'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif",
             borderRadius: 10,
             colorBgLayout: mode === 'dark' ? '#0b1312' : '#f4f7f6',
+            // Secondary and placeholder text dark enough for WCAG AA contrast.
+            colorTextDescription: mode === 'dark' ? '#9fb1ae' : '#5b6b68',
+            colorTextPlaceholder: mode === 'dark' ? '#8a9b98' : '#6a7875',
           },
           components: {
             Layout: { siderBg: mode === 'dark' ? '#0f1b1a' : '#ffffff', headerBg: 'transparent' },

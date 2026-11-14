@@ -1,0 +1,42 @@
+import { Meta, ColorPalette, ColorItem, Typeset } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Design tokens" />
+
+# Design tokens
+
+Colors and fonts are defined once, as CSS variables in `src/styles.css` and as Ant Design theme tokens in
+`src/context/ThemeContext.jsx`, so every component stays consistent in both themes.
+
+## Brand colors
+
+<ColorPalette>
+  <ColorItem title="Primary" subtitle="--primary" colors={{ Light: '#0f766e', Dark: '#2dd4bf' }} />
+  <ColorItem title="Income" subtitle="--income" colors={{ Light: '#16a34a', Dark: '#4ade80' }} />
+  <ColorItem title="Expense" subtitle="--expense" colors={{ Light: '#e11d48', Dark: '#fb7185' }} />
+  <ColorItem title="Warning" subtitle="--warning" colors={{ Light: '#d97706', Dark: '#fbbf24' }} />
+</ColorPalette>
+
+## Surfaces and text
+
+<ColorPalette>
+  <ColorItem title="Background" subtitle="--bg" colors={{ Light: '#f4f7f6', Dark: '#0b1312' }} />
+  <ColorItem title="Surface" subtitle="--surface" colors={{ Light: '#ffffff', Dark: '#121d1c' }} />
+  <ColorItem title="Border" subtitle="--border" colors={{ Light: '#e3eae8', Dark: '#22302e' }} />
+  <ColorItem title="Text" subtitle="--ink" colors={{ Light: '#12211f', Dark: '#e7efed' }} />
+  <ColorItem title="Muted text" subtitle="--muted" colors={{ Light: '#5b6b68', Dark: '#9fb1ae' }} />
+</ColorPalette>
+
+## Typography
+
+**Fraunces** for headings and big numbers:
+
+<Typeset fontFamily="'Fraunces', Georgia, serif" fontWeight={700} fontSizes={[36, 28, 22]} sampleText="$5,200 earned in November" />
+
+**DM Sans** for everything else:
+
+<Typeset fontFamily="'DM Sans', system-ui, sans-serif" fontSizes={[16, 14, 12]} sampleText="Groceries · $86.40 · Nov 8, 2026" />
+
+## Shape
+
+- Corner radius: **10px** for cards, inputs and buttons (Ant Design `borderRadius`).
+- Category colors come from 14 presets, shown on the [CategoryIcon](?path=/story/data-display-categoryicon--all-icons) page.

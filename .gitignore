@@ -6,3 +6,4 @@ client/build/
 client/dist/
 *.log
 .DS_Store
+storybook-static/

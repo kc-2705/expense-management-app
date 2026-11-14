@@ -1,0 +1,38 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction" />
+
+# Expenso UI components
+
+These are the building blocks of **Expenso**, a personal finance tracker built with React, Ant Design, React Query and Recharts.
+Each component is shown on its own, in every state it can be in: normal, empty, loading, error, light and dark.
+
+## How to use this Storybook
+
+- Pick a component in the sidebar. Each story is one state of it.
+- Change props live in the **Controls** panel.
+- Switch between **light and dark** with the Theme button in the toolbar.
+- Check phone and tablet sizes with the **Viewport** button.
+- Open the **Accessibility** panel to see automatic WCAG checks (axe-core).
+
+## No server needed
+
+Stories that load data use a small mock API (`.storybook/mockApi.js`). Each story says what the server should answer,
+so states like "the AI model is offline" or "saving failed" are easy to show:
+
+```js
+export const OllamaNotInstalled = {
+  parameters: { api: { 'GET /ai/status': { available: false, reason: 'Ollama is not running.' } } },
+};
+```
+
+## Sections
+
+| Section | What's in it |
+| --- | --- |
+| Foundations | Brand colors and typography |
+| Data display | Category icons, amounts, stat cards, budget bars |
+| Charts | Six-month trend and spending by category |
+| Inputs | Page header and month switcher |
+| Forms | Add and edit transaction dialog with validation |
+| AI | The monthly summary card, written by a local model |

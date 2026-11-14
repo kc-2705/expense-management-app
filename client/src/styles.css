@@ -11,6 +11,10 @@
   --income: #16a34a;
   --expense: #e11d48;
   --warning: #d97706;
+  /* Darker versions for text, so it passes WCAG AA contrast (4.5:1) on light backgrounds. */
+  --income-text: #15803d;
+  --expense-text: #be123c;
+  --warning-text: #b45309;
   --gold: #fbbf24;
   --display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -28,6 +32,9 @@
   --income: #4ade80;
   --expense: #fb7185;
   --warning: #fbbf24;
+  --income-text: var(--income);
+  --expense-text: var(--expense);
+  --warning-text: var(--warning);
   color-scheme: dark;
 }
 
@@ -39,8 +46,8 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--b
 .nowrap { white-space: nowrap; }
 .stack { display: flex; flex-direction: column; gap: 18px; }
 .center-screen { height: 100vh; display: grid; place-items: center; }
-.amount.income { color: var(--income); }
-.amount.expense { color: var(--expense); }
+.amount.income { color: var(--income-text); }
+.amount.expense { color: var(--expense-text); }
 .amount { font-variant-numeric: tabular-nums; }
 
 /* ---------- app shell ---------- */
@@ -69,8 +76,8 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--b
 .tone-expense .stat-icon { color: var(--expense); }
 .stat-value { font-size: 28px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
 .stat-change { font-size: 13px; font-weight: 600; }
-.stat-change.good { color: var(--income); }
-.stat-change.bad { color: var(--expense); }
+.stat-change.good { color: var(--income-text); }
+.stat-change.bad { color: var(--expense-text); }
 .stat-change.muted { font-weight: 400; }
 
 .mini-stats { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
@@ -111,8 +118,8 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--b
 .budget-line { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
 .budget-amounts { font-size: 12.5px; font-variant-numeric: tabular-nums; }
 .budget-status { font-size: 12.5px; color: var(--muted); }
-.budget-status.warning { color: var(--warning); font-weight: 600; }
-.budget-status.over { color: var(--expense); font-weight: 600; }
+.budget-status.warning { color: var(--warning-text); font-weight: 600; }
+.budget-status.over { color: var(--expense-text); font-weight: 600; }
 .budget-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-top: 16px; }
 .budget-card { position: relative; }
 .budget-card.over { border-color: color-mix(in srgb, var(--expense) 45%, var(--border)); }
@@ -166,14 +173,14 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--b
 .hero-card-row div { display: flex; flex-direction: column; }
 .hero-card-row span { color: var(--muted); font-size: 12px; }
 .hero-card-row strong { font-size: 22px; font-variant-numeric: tabular-nums; }
-.hero-card-row .pos { color: var(--income); }
-.hero-card-row .neg { color: var(--expense); }
+.hero-card-row .pos { color: var(--income-text); }
+.hero-card-row .neg { color: var(--expense-text); }
 .hero-bars { display: flex; align-items: flex-end; gap: 14px; height: 150px; margin: 22px 0; padding: 0 6px; border-bottom: 1px solid var(--border); }
 .hero-bar { flex: 1; height: 100%; display: flex; align-items: flex-end; gap: 4px; }
 .hero-bar i { flex: 1; border-radius: 6px 6px 0 0; }
 .hero-bar .in { background: var(--income); }
 .hero-bar .out { background: var(--expense); opacity: 0.85; }
-.hero-budget { display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--warning); font-weight: 600; }
+.hero-budget { display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--warning-text); font-weight: 600; }
 .hero-budget b { height: 8px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
 .hero-budget i { display: block; height: 100%; background: var(--warning); }
 .feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }

@@ -8,6 +8,7 @@
 ![Ant Design](https://img.shields.io/badge/Ant%20Design-6-0170FE?logo=antdesign&logoColor=white)
 ![Ollama](https://img.shields.io/badge/AI-Ollama%20%2B%20Llama%203.2-000000?logo=ollama&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-22%20passing-brightgreen)
+[![Storybook](https://img.shields.io/badge/Storybook-live-FF4785?logo=storybook&logoColor=white)](https://kc-2705.github.io/expense-management-app/)
 
 A personal finance tracker: record income and expenses, set monthly budgets per category, automate recurring payments, import bank statements, and see where your money goes.
 
@@ -52,6 +53,24 @@ ollama pull llama3.2:3b
 ```
 
 Try it with `docs/sample/freelancer-bank-statement.csv`. In testing on that file, `llama3.2:3b` picked the right category for 15 of 15 transactions in about 16 seconds on a laptop GPU. Transactions are sent in batches of 5, which proved more accurate than sending them all at once. To use a different model, set `OLLAMA_MODEL` in `.env`.
+
+## Component library (Storybook)
+
+**Live:** https://kc-2705.github.io/expense-management-app/
+
+Every UI component is documented in Storybook, in each state it can be in: normal, empty, loading, error, light and dark.
+
+- **Stories** for category icons, amounts, stat cards, budget bars, charts, the page header and month switcher, the add/edit transaction form and the AI summary card.
+- **Mock API** (`client/.storybook/mockApi.js`): each story says what the server should answer, so states like "AI model offline" or "save failed" need no backend.
+- **Theme toggle** in the toolbar to check light and dark mode.
+- **Accessibility checks** (axe-core) on every story, with zero WCAG violations in both themes.
+- **Design tokens** page with the brand colors and typography.
+
+```bash
+cd client
+npm run storybook        # http://localhost:6006
+npm run build-storybook  # static site in client/storybook-static
+```
 
 ## Security
 

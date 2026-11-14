@@ -23,7 +23,7 @@ export default function AiSummaryCard({ month }) {
     >
       {!ai.available ? (
         <Typography.Text type="secondary">
-          Install <a href="https://ollama.com" target="_blank" rel="noreferrer">Ollama</a> to get a plain-English recap of your month. {ai.reason}
+          Install <a href="https://ollama.com" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline' }}>Ollama</a> to get a plain-English recap of your month. {ai.reason}
         </Typography.Text>
       ) : summary.data ? (
         <>
